@@ -7,7 +7,7 @@ title: ブログトップ
 
 ここはGitHub Pagesで作ったブログです。
 
-## ↓↓↓記事一覧
+## 記事一覧
 
 <ul>
   {% for post in site.posts %}
