@@ -30,7 +30,7 @@ permalink: /projects/
     <div style="padding: 20px;">
       <h3 style="margin-top: 0;">Research</h3>
       <p style="font-size: 0.9em; color: #666;">
-        水素細菌 <i>C. necator</i> の遺伝子改変による炭素固定の研究。地球温暖化の解決を目指して。
+        理系大学で生物を扱っています。現在は休憩中zzz
       </p>
       <span style="background: #e3f2fd; color: #0277bd; padding: 2px 8px; border-radius: 4px; font-size: 0.8em;">University</span>
     </div>
