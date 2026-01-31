@@ -8,7 +8,7 @@
     <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>{{ site.title | default: site.github.repository_name }}</title>
-    </head>
+  </head>
   <body>
     <div class="wrapper">
       <header>
@@ -16,14 +16,6 @@
         
         <p class="header">{{ site.description | default: site.github.project_tagline }}</p>
 
-        </header>
-      
-      <section>
-        {{ content }}
-      </section>
-      
-      <footer>
-        <p><small>&copy; 2026 hk250109. All rights reserved.</small></p>
         <div style="text-align: center; margin: 20px 0;">
            <img src="{{ '/images/icon.jpg' | relative_url }}" alt="Profile" style="border-radius: 50%; width: 100px; height: 100px; object-fit: cover; border: 3px solid rgba(255,255,255,0.5);">
         </div>
@@ -45,6 +37,14 @@
         <div style="margin-top: 30px;">
             <a href="https://note.com/classicalstudent" target="_blank" style="display: block; background: rgba(255,255,255,0.2); padding: 8px; text-align: center; border-radius: 5px; text-decoration: none; margin-bottom: 5px;">✍️ Note</a>
         </div>
+        </header>
+      
+      <section>
+        {{ content }}
+      </section>
+      
+      <footer>
+        <p><small>&copy; 2026 hk250109. All rights reserved.</small></p>
       </footer>
     </div>
   </body>
