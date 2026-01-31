@@ -9,7 +9,7 @@ permalink: /projects/
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
 
   <div style="border: 1px solid #eee; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-    <a href="{{ '/archive/' | relative_url }}" style="text-decoration: none; color: inherit;">
+    <a href="https://note.com/classicalstudent/m/mef86dcafef91" target="_blank" style="text-decoration: none; color: inherit;">
       <div style="background: #37474f; height: 120px; display: flex; align-items: center; justify-content: center; font-size: 3em;">
         🎻
       </div>
@@ -37,14 +37,14 @@ permalink: /projects/
   </div>
 
   <div style="border: 1px solid #eee; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-    <a href="https://note.com/classicalstudent" target="_blank" style="text-decoration: none; color: inherit;">
+    <a href="https://note.com/classicalstudent/m/md38415ffcf17" target="_blank" style="text-decoration: none; color: inherit;">
       <div style="background: #2cb696; height: 120px; display: flex; align-items: center; justify-content: center; font-size: 3em; color: white;">
         ✍️
       </div>
       <div style="padding: 20px;">
         <h3 style="margin-top: 0;">Note</h3>
         <p style="font-size: 0.9em; color: #666;">
-          旅行記や留学日記、少し長めのコラム執筆。クラシック音楽の小噺も。
+          旅行記や留学日記、少し長めのコラム執筆。
         </p>
         <span style="background: #e0f2f1; color: #00695c; padding: 2px 8px; border-radius: 4px; font-size: 0.8em;">Writing</span>
       </div>
