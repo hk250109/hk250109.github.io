@@ -15,36 +15,40 @@ title: ブログトップ
   </p>
 </div>
 
-<h2> 最新の記事</h2>
+<h2>最新の記事</h2>
 
 <div class="posts">
   {% for post in site.posts %}
-    <div style="margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 20px;">
+    <div style="display: flex; align-items: flex-start; margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 20px;">
 
       {% if post.image %}
-        <div style="margin-bottom: 15px;">
-          <a href="{{ post.url }}">
-            <img src="{{ post.image | relative_url }}" alt="cover" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">
-          </a>
-        </div>
+        <a href="{{ post.url }}" style="margin-right: 15px; flex-shrink: 0;">
+          <img src="{{ post.image | relative_url }}" alt="cover" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%; border: 1px solid #ddd;">
+        </a>
       {% endif %}
       
-      <h3 style="margin-bottom: 5px;">
-        <a href="{{ post.url }}" style="text-decoration: none; color: #333;">
-          {{ post.title }}
-        </a>
-      </h3>
-      
-      <small style="color: #888;">
-         {{ post.date | date: "%Y-%m-%d" }} | 
-         {{ post.tags | join: ", " }}
-      </small>
+      <div style="flex-grow: 1;">
+        
+        <h3 style="margin-top: 0; margin-bottom: 5px;">
+          <a href="{{ post.url }}" style="text-decoration: none; color: #333;">
+            {{ post.title }}
+          </a>
+        </h3>
+        
+        <small style="color: #888; display: block; margin-bottom: 8px;">
+           {{ post.date | date: "%Y-%m-%d" }}
+           {% if post.tags.size > 0 %}
+             | {{ post.tags | join: ", " }}
+           {% endif %}
+        </small>
 
-      <p style="color: #555; margin-top: 10px;">
-        {{ post.excerpt | strip_html | truncate: 80 }}
-      </p>
-      
-      <a href="{{ post.url }}">続きを読む →</a>
+        <p style="color: #555; margin: 0; line-height: 1.5; font-size: 0.95em;">
+          {{ post.excerpt | strip_html | truncate: 80 }}
+        </p>
+        
+        <a href="{{ post.url }}" style="font-size: 0.9em; display: inline-block; margin-top: 5px;">続きを読む →</a>
+      </div>
+
     </div>
-  {% endfor %}
+    {% endfor %}
 </div>
