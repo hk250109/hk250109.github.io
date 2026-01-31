@@ -20,6 +20,14 @@ title: ブログトップ
 <div class="posts">
   {% for post in site.posts %}
     <div style="margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 20px;">
+
+      {% if post.image %}
+        <div style="margin-bottom: 15px;">
+          <a href="{{ post.url }}">
+            <img src="{{ post.image | relative_url }}" alt="cover" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">
+          </a>
+        </div>
+      {% endif %}
       
       <h3 style="margin-bottom: 5px;">
         <a href="{{ post.url }}" style="text-decoration: none; color: #333;">
