@@ -10,10 +10,10 @@ layout: default
     
     <div class="post-meta" style="display: flex; align-items: center; justify-content: flex-start; color: #888;">
       
-      {% if page.image %}
-        <img src="{{ page.image | relative_url }}" alt="icon" 
-             style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; margin-right: 15px; border: 2px solid #eee;">
-      {% endif %}
+      {% assign post_icon = page.image | default: '/images/icon.jpg' %}
+
+<img src="{{ post_icon | relative_url }}" alt="icon" 
+     style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; margin-right: 15px; border: 2px solid #eee;">
 
       <time datetime="{{ page.date | date_to_xmlschema }}" style="font-size: 0.9em;">
         📅 {{ page.date | date: "%Y-%m-%d" }}
