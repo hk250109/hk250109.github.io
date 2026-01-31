@@ -15,10 +15,41 @@ title: ブログトップ
   </p>
 </div>
 
+{% assign pinned_title = "ドイツで『第九』を聴いて、人生の解像度が少し上がった話" %}
+{% assign pinned_post = site.posts | where:"title", pinned_title | first %}
+
+{% if pinned_post %}
+<div style="margin-bottom: 50px;">
+  <p style="color: #d32f2f; font-weight: bold; margin-bottom: 10px; font-size: 1.1em;">📌 Pick Up</p>
+  
+  <div style="border: 2px solid #d32f2f; border-radius: 8px; padding: 20px; background-color: white;">
+    <div style="display: flex; align-items: flex-start;">
+      {% assign pinned_thumb = pinned_post.image | default: '/images/icon.jpg' %}
+      <a href="{{ pinned_post.url }}" style="margin-right: 20px; flex-shrink: 0;">
+        <img src="{{ pinned_thumb | relative_url }}" alt="cover" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; border: 2px solid #d32f2f;">
+      </a>
+      <div>
+        <h3 style="margin-top: 0; margin-bottom: 10px;">
+          <a href="{{ pinned_post.url }}" style="text-decoration: none; color: #333; font-size: 1.2em;">
+            {{ pinned_post.title }}
+          </a>
+        </h3>
+        <p style="color: #555; margin: 0; line-height: 1.6;">
+          {{ pinned_post.excerpt | strip_html | truncate: 100 }}
+        </p>
+        <a href="{{ pinned_post.url }}" style="color: #d32f2f; font-weight: bold; display: inline-block; margin-top: 10px;">記事を読む →</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
 <h2>最新の記事</h2>
 
 <div class="posts">
   {% for post in site.posts %}
+    {% if post.title == pinned_title %}{% continue %}{% endif %}
+
     <div style="display: flex; align-items: flex-start; margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 20px;">
 
       {% assign thumbnail = post.image | default: '/images/icon.jpg' %}
