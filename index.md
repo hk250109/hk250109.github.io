@@ -3,19 +3,40 @@ layout: default
 title: ブログトップ
 ---
 
-# 私のブログへようこそ
+<div style="background-color: #f6f8fa; padding: 20px; border-radius: 8px; margin-bottom: 30px;">
+  <h2 style="margin-top: 0;">🇩🇪 Hello from Berlin!</h2>
+  <p>
+    クラシック音楽が好きです。<br>
+    音楽のことや日頃考えたことなどを書き残します。<br>
+    気ままな日記になっています。
+  </p>
+  <p>
+    <a href="./about">→ 詳しいプロフィールを見る</a>
+  </p>
+</div>
 
-ブログを作ってみました。
+<h2> 最新の記事</h2>
 
-[プロフィールはこちら](./about)
-
-## 記事一覧
-
-<ul>
+<div class="posts">
   {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-      - {{ post.date | date: "%Y-%m-%d" }}
-    </li>
+    <div style="margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 20px;">
+      
+      <h3 style="margin-bottom: 5px;">
+        <a href="{{ post.url }}" style="text-decoration: none; color: #333;">
+          {{ post.title }}
+        </a>
+      </h3>
+      
+      <small style="color: #888;">
+         {{ post.date | date: "%Y-%m-%d" }} | 
+         {{ post.tags | join: ", " }}
+      </small>
+
+      <p style="color: #555; margin-top: 10px;">
+        {{ post.excerpt | strip_html | truncate: 80 }}
+      </p>
+      
+      <a href="{{ post.url }}">続きを読む →</a>
+    </div>
   {% endfor %}
-</ul>
+</div>
