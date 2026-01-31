@@ -2,7 +2,7 @@
 layout: post
 title: "初めての日記"
 date: 2026-01-31 4:45:00 +0900
-categolies: 日記
+categories: 日記
 ---
 
 # 日記始めました！
