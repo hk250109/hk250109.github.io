@@ -4,40 +4,38 @@ layout: default
 
 <article class="post">
   
-  <div class="post-header-box" style="margin-bottom: 30px;">
-    <h1 class="post-title" style="margin-top: 0;">{{ page.title }}</h1>
-    <p class="post-meta" style="color: #888;">
-      <time datetime="{{ page.date | date_to_xmlschema }}">
+  <div class="post-header-box" style="margin-bottom: 40px;">
+    
+    <h1 class="post-title" style="margin-top: 0; margin-bottom: 15px;">{{ page.title }}</h1>
+    
+    <div class="post-meta" style="display: flex; align-items: center; justify-content: flex-start; color: #888;">
+      
+      {% if page.image %}
+        <img src="{{ page.image | relative_url }}" alt="icon" 
+             style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; margin-right: 15px; border: 2px solid #eee;">
+      {% endif %}
+
+      <time datetime="{{ page.date | date_to_xmlschema }}" style="font-size: 0.9em;">
         📅 {{ page.date | date: "%Y-%m-%d" }}
       </time>
-    </p>
+
+    </div>
+    
   </div>
-  
-    {% if page.image %}
-      <div style="text-align: center; margin-bottom: 40px;">
-        <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" style="width: 50px; height: auto; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-      </div>
-    {% endif %}
-  
+
   <div class="post-content">
     {{ content }}
   </div>
 
 </article>
 
-<div style="margin: 40px 0; text-align: center;">
-    <p style="font-size: 0.8em; color: #888;">＼ この記事をシェアする ／</p>
-    
-    <a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ page.url | absolute_url }}" target="_blank" rel="nofollow" style="background: #000; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-right: 10px;">
-      𝕏 Post
-    </a>
-
-    <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}" target="_blank" rel="nofollow" style="background: #3b5998; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;">
-      Facebook
-    </a>
-  </div>
-
 <hr style="margin-top: 50px;">
+
+<div style="margin: 40px 0; text-align: center;">
+  <p style="font-size: 0.8em; color: #888;">＼ この記事をシェアする ／</p>
+  <a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ page.url | absolute_url }}" target="_blank" rel="nofollow" style="background: #000; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-right: 10px;">𝕏 Post</a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}" target="_blank" rel="nofollow" style="background: #3b5998; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;">Facebook</a>
+</div>
 
 <div id="disqus_thread"></div>
 <script>
