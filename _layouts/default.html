@@ -11,13 +11,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="icon" type="image/jpeg" href="{{ '/images/icon.jpg' | relative_url }}">
     <title>{{ site.title | default: site.github.repository_name }}</title>
-
+    
     <style>
       body, h1, h2, h3, h4, h5, h6, p, a, li, span, div, time, small {
         font-family: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif !important;
       }
     </style>
-    
+
   </head>
   <body>
     <div class="wrapper">
@@ -27,11 +27,11 @@
         
         <p class="header">{{ site.description | default: site.github.project_tagline }}</p>
 
-        <div style="text-align: center; margin: 10px 0;">
+        <div style="text-align: center; margin: 12px 0;">
            <img src="{{ '/images/icon.jpg' | relative_url }}" alt="Profile" style="border-radius: 50%; width: 100px; height: 100px; object-fit: cover; border: 3px solid rgba(255,255,255,0.5);">
         </div>
 
-        <p style="font-size: 0.9em; margin-bottom: 10px;">
+        <p style="font-size: 0.9em; margin-bottom: 12px;">
           ベルリンで生活中。<br>
           クラシック音楽のファン。<br>
           アイコンはドイツにて第九を聴いた際のもの。
@@ -50,16 +50,20 @@
           <li style="margin-bottom: 8px;">
              <a href="{{ '/projects/' | relative_url }}" style="text-decoration: none;">🎻 Interests</a>
           </li>
+          <li style="margin-bottom: 8px;">
+            <a href="{{ '/feed.xml' | relative_url }}" target="_blank" style="text-decoration: none;">📡 RSS Feed</a>
+          </li>
         </ul>
-        <li style="margin-bottom: 8px;">
-  <a href="{{ '/feed.xml' | relative_url }}" target="_blank" style="text-decoration: none;">📡 RSS Feed</a>
-</li>
 
-        <div style="margin-top: 8px;">
-            <a href="https://note.com/classicalstudent" target="_blank" style="display: block; background: rgba(255,255,255,0.2); padding: 8px; text-align: center; border-radius: 5px; text-decoration: none;">✍️ Note</a>
+        <div style="margin-top: 8px; display: flex; gap: 10px;">
+            <a href="https://note.com/classicalstudent" target="_blank" style="flex: 1; display: block; background: rgba(255,255,255,0.2); padding: 8px; text-align: center; border-radius: 5px; text-decoration: none;">
+              ✍️ Note
+            </a>
+            <a href="https://x.com/あなたのID" target="_blank" style="flex: 1; display: block; background: rgba(255,255,255,0.2); padding: 8px; text-align: center; border-radius: 5px; text-decoration: none;">
+              🐦 X
+            </a>
         </div>
-
-        <div style="margin-top: 8px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 10px;">
+        <div style="margin-top: 8px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.1);">
           <p style="font-size: 0.7em; opacity: 0.6; margin: 0;">
             &copy; 2026 hk250109.<br>All rights reserved.
           </p>
@@ -69,7 +73,7 @@
       <section>
         {{ content }}
       </section>
-      
-      </div>
+
+    </div>
   </body>
 </html>
