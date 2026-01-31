@@ -21,14 +21,13 @@ title: ブログトップ
   {% for post in site.posts %}
     <div style="display: flex; align-items: flex-start; margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 20px;">
 
-      {% if post.image %}
-        <a href="{{ post.url }}" style="margin-right: 15px; flex-shrink: 0;">
-          <img src="{{ post.image | relative_url }}" alt="cover" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%; border: 1px solid #ddd;">
-        </a>
-      {% endif %}
+      {% assign thumbnail = post.image | default: '/images/icon.jpg' %}
+      
+      <a href="{{ post.url }}" style="margin-right: 15px; flex-shrink: 0;">
+        <img src="{{ thumbnail | relative_url }}" alt="cover" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%; border: 1px solid #ddd;">
+      </a>
       
       <div style="flex-grow: 1;">
-        
         <h3 style="margin-top: 0; margin-bottom: 5px;">
           <a href="{{ post.url }}" style="text-decoration: none; color: #333;">
             {{ post.title }}
@@ -50,5 +49,5 @@ title: ブログトップ
       </div>
 
     </div>
-    {% endfor %}
+  {% endfor %}
 </div>
